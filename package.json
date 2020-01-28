@@ -5,7 +5,7 @@
 	"description": "A package container various generic tools for Dog House development.",
 	"untiy": "2019.3.0f5",
 	"dependencies":{
-	
+		"com.unity.ugui" : "1.0.0"
 	},
 	"keywords": ["library", "scaffold", "dog", "utility"],
 	"author":{
