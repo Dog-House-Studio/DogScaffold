@@ -7,7 +7,7 @@
 	"dependencies":{
 	
 	},
-	"keywords": ["library", "scaffold", "dog", "utility"]
+	"keywords": ["library", "scaffold", "dog", "utility"],
 	"author":{
 		"name": "Luke Trynchuk",
 		"email": "luke.trynchuk@doghousegamestudio.com",
