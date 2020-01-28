@@ -1,0 +1,15 @@
+{
+	"name": "com.doghouse.dogscaffold",
+	"version": "1.0.0",
+	"displayName": "Dog Scaffold",
+	"description": "A package container various generic tools for Dog House development.",
+	"untiy": "2019.3.0f5",
+	"dependencies":{
+	
+	},
+	"keywords": ["library", "scaffold", "dog", "utility"],
+	"author":{
+		"name": "Luke Trynchuk",
+		"email": "luke.trynchuk@doghousegamestudio.com"
+	}
+}
