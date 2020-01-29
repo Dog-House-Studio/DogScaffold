@@ -3,9 +3,10 @@
 	"version": "1.0.0",
 	"displayName": "Dog Scaffold",
 	"description": "A package container various generic tools for Dog House development.",
-	"untiy": "2019.3.0f5",
+	"unity": "2019.3",
 	"dependencies":{
-		"com.unity.ugui" : "1.0.0"
+		"com.unity.ugui" : "1.0.0",
+		"com.unity.timeline" : "1.2.10"
 	},
 	"keywords": ["library", "scaffold", "dog", "utility"],
 	"author":{
