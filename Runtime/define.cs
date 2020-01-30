@@ -1,0 +1,1 @@
+﻿#define DOG_SCAFFOLD

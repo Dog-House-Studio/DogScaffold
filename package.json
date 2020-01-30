@@ -1,16 +1,21 @@
 {
-	"name": "com.doghouse.dogscaffold",
-	"version": "1.0.0",
-	"displayName": "Dog Scaffold",
-	"description": "A package container various generic tools for Dog House development.",
-	"unity": "2019.3",
-	"dependencies":{
-		"com.unity.ugui" : "1.0.0",
-		"com.unity.timeline" : "1.2.10"
-	},
-	"keywords": ["library", "scaffold", "dog", "utility"],
-	"author":{
-		"name": "Luke Trynchuk",
-		"email": "luke.trynchuk@doghousegamestudio.com"
-	}
+  "name": "com.doghouse.dogscaffold",
+  "version": "1.0.1",
+  "displayName": "Dog Scaffold",
+  "description": "A package container various generic tools for Dog House development.\n\n1.0.0 - Initial Release\n1.0.1 - Adds conditional in service locator which determines whether or not to log to the console.",
+  "unity": "2019.3",
+  "dependencies": {
+    "com.unity.ugui": "1.0.0",
+    "com.unity.timeline": "1.2.10"
+  },
+  "keywords": [
+    "library",
+    "scaffold",
+    "dog",
+    "utility"
+  ],
+  "author": {
+    "name": "Luke Trynchuk",
+    "email": "luke.trynchuk@doghousegamestudio.com"
+  }
 }

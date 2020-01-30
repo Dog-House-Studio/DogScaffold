@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 using UnityEngine;
+using System.Diagnostics;
 
 namespace DogScaffold
 {
@@ -12,7 +13,7 @@ namespace DogScaffold
     /// </summary>
 	public sealed class ServiceLocator 
 	{
-		#region Private Variables
+#region Private Variables
 		private static ServiceLocator m_instance;
 
         private static Dictionary < string, object > m_serviceDictionary
@@ -39,9 +40,10 @@ namespace DogScaffold
 
         private static Dictionary<string, object>       serviceDictionary;
         private static Dictionary<string, List<Action>> callbackDictionary;
-		#endregion
+        //private ServiceReference<ILogService> 
+#endregion
 
-		#region Main Methods
+#region Main Methods
         public static void Register < T >(T service)
 		{
             if (CheckServiceIsRegistered<T>())  ReplaceServiceInstance<T>(service);
@@ -91,9 +93,9 @@ namespace DogScaffold
 			if (CheckServiceIsRegistered<T> ()) callback ();
 			AddHandle<T> (callback);
 		}
-		#endregion
+#endregion
 
-		#region Utility Methods
+#region Utility Methods
         private static void ReplaceServiceInstance<T>(T NewService)
 		{
             SendServiceReplacementWarning<T>();
@@ -117,9 +119,9 @@ namespace DogScaffold
             if (!CheckHandleIsRegistered(typeName)) return;
             DispatchHandles(m_callbackDictionary[typeName]);
         }
-		#endregion
+#endregion
 
-		#region Low Level Functions
+#region Low Level Functions
 		private static void RemoveHandles<T>()
 		{
 			if (!CheckHandleIsRegistered<T> ()) return;
@@ -160,11 +162,13 @@ namespace DogScaffold
         private static void UnregisterService(string typeName) =>
             m_serviceDictionary[typeName] = null;
 
+        [Conditional("ENABLE_LOGS")]
         private static void SendServiceReplacementWarning<T>() =>
-            Debug.LogWarning($"Service : {typeof(T).Name} is being replaced.");
+            UnityEngine.Debug.LogWarning($"Service : {typeof(T).Name} is being replaced.");
 
+        [Conditional("ENABLE_LOGS")]
         private static void SendServiceReplacementWarning(string typeName) =>
-            Debug.LogWarning($"Service : {typeName} is being replaced.");
+            UnityEngine.Debug.LogWarning($"Service : {typeName} is being replaced.");
 
         private static bool CheckServiceIsRegistered<T>()       =>
             m_serviceDictionary.ContainsKey(typeof(T).Name);
@@ -183,6 +187,6 @@ namespace DogScaffold
 
         private static void SetServiceInstance(string typeName, object service) =>
             m_serviceDictionary[typeName] = service;
-        #endregion
+#endregion
     }
 }
